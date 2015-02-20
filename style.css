@@ -1,0 +1,113 @@
+body{
+  background-color:#E9E9E9;
+ overflow:auto;
+ 
+}
+h1{
+  margin-top:0px;
+  padding:15px 0px 0px 0px;
+  height:60px;
+  width:100%;
+  position:fixed;
+  z-index:1;
+  text-align:center;  
+  color:white;
+  font-family:;
+  background-color:#415E9B;
+}
+.contentdiv{
+  position:relative;
+  padding-top:60px;
+  padding-bottom:70px;  
+}
+
+li{
+   list-style-type :none;
+   width:90%;
+   position:relative;
+   
+  //padding:1px;
+ // background:#EFE980;
+}
+
+.oldmessage{
+  transition: background .5s;
+  width:90%;
+  left:10%;
+  box-shadow:1px 2px 1px #D9D9D9;	
+  border: 0px ;
+  padding:1px;
+ // margin :5px 5px 5px ; 
+  background-color:#FFFFFF;
+  position:relative;
+}
+.oldmessage:hover{
+  background:#CDCDCC;
+}
+.messagename{
+  border: 10px ;
+  padding:1px;
+  margin :5px 5px 5px 0px;
+}
+div p{ 
+  border: 0px ;
+  padding:1px;
+  margin :1px; 
+}
+.btndiv{
+  display:inline;
+  left:80%;
+  top:15%;
+  position:relative;
+}
+.btndiv button{
+  background:none;
+  border:none;
+  width:auto;
+}
+.btndiv button:hover{
+  background:gray;
+}
+li p{
+
+  margin-left:5%;
+  margin-right:5%;
+  word-break: break-all;
+}
+
+form .ng-invalid.ng-dirty { background-color: pink; } 
+form .ng-valid.ng-dirty { background-color: lightgreen; }
+.form-div{
+ 
+height:100%;
+  top:92.5%;
+  width:100%;
+  position:fixed;
+  z-index:0;
+  padding:1%;
+  background-color:#415E9B;
+}
+#namearea{
+height:40px;
+width:20%;
+//margin:0% 1% 0% 1%;
+}
+#textarea{
+height:40px;
+width:67%;
+}
+#addbtn{
+width:10%;
+background:none;
+border:none;
+color:white;
+font-size:150%;
+}
+#addbtn:hover{
+color:#41009B;
+font-weight:bold;
+}
+input{
+border-radius:5px;
+ border:none;
+}
