@@ -1,4 +1,4 @@
-<!doctype html>
+
 <html lang="en" ng-app="ChatApp">
   <head>
     <meta charset="UTF-8">
@@ -12,8 +12,10 @@
   <body ng-controller="ChatCtrl">
     <h1>Angular JS 聊天室</h1>
     <div class="contentdiv">
-    <ul>
+    <ul  auto-scroll-to-bottom>
+      <p>共有{{messages.length}}條訊息</p>
       <li   ng-repeat="msg in messages" >
+
         <div style="display:inline">
         <div class="btndiv" >
           <button ng-click="editmessage(msg)">Edit</button>
@@ -21,7 +23,7 @@
           </div >
         
         <div class="oldmessage" >
-          <p >{{msg.name}} 說：<br>{{msg.text}}</p>
+          <p >{{msg.name}}：<br>{{msg.text}}</p>
         </div>
         </div>
       </li>
