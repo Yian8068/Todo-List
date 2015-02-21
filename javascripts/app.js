@@ -19,7 +19,7 @@ app.controller("ChatCtrl",function($scope,$firebase){
     $scope.messages.$save(msg);
   };
   $scope.oneceToShow = 10;
-  $scope.datasource = [];
+  $scope.datasource = $scope.messages;
             $scope.init = function () {//第一次加入0~20
                 $scope.sourcePush(0, $scope.oneceToShow)
             };
