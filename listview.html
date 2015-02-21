@@ -1,0 +1,13 @@
+<li ng-repeat="msg in messages">
+
+        <div style="display:inline">
+        <div class="btndiv" >
+          <button ng-click="editmessage(msg)">Edit</button>
+          <button ng-click="deletemessage(msg)">x</button>
+          </div >
+        
+        <div class="oldmessage" >
+          <p >{{msg.name}}：<br>{{msg.text}}</p>
+        </div>
+        </div>
+      </li>
