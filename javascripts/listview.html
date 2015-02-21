@@ -1,3 +1,4 @@
+<div when-scroll-bottom="loadMore()">
 <li ng-repeat="msg in messages">
 
         <div style="display:inline">
@@ -6,8 +7,9 @@
           <button ng-click="deletemessage(msg)">x</button>
           </div >
         
-        <div class="oldmessage" >
+        <div class="oldmessage" ng-transclude inject>
           <p >{{msg.name}}：<br>{{msg.text}}</p>
         </div>
         </div>
       </li>
+</div>
