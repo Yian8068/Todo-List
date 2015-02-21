@@ -1,3 +1,5 @@
-# Chatroom  (2015-2-20)
-簡易ANGULAR JS 聊天室
-無登入功能
+# Todo List (2015-2-21)
+ANGULAR JS 
+待辦清單
+
+http://yian8068.github.io/Todo-List/
