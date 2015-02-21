@@ -1,38 +1,45 @@
-app= angular.module("ChatApp",["firebase"]);
-app.controller("ChatCtrl",function($scope,$firebase){
-  var ref=new Firebase("https://chatapp-anjs.firebaseio.com/");
-  var sync= $firebase(ref);
-  $scope.messages=sync.$asArray();
+todo=angular.module("TodoApp",["firebase"]);
 
-  $scope.addmessage=function(m,txt){
-    if(m.length===0){m="Anonymous";};
-    if(txt.length===0){txt="(empty)";};
-    $scope.messages.$add({text:txt,name:m});
-    $scope.newMessage="";
+todo.controller("todoCtrl",function($scope,$firebase){
+  var ref=new Firebase("https://todoapp-yian8068.firebaseio.com/");
+  var sync=$firebase(ref);
+  $scope.todos=sync.$asArray();
+
+  $scope.addtodo=function(newtodo){
+    $scope.todos.$add({thing: newtodo,done:false});
+    $scope.newTodo="";
   };
-  
-  $scope.deletemessage=function(msg){
-    $scope.messages.$remove(msg);
+	$scope.change=function(t){
+
+    $scope.todos.$save(t);
   };
-  $scope.editmessage=function(msg){
-    msg.text=prompt("Edit Message",msg.text);
-    $scope.messages.$save(msg);
+  $scope.remain=function(){
+    var count=0;
+    angular.forEach($scope.todos,function(todo){
+      count+= todo.done? 0 : 1;
+    });
+    return count;
   };
-app.directive('auto-scroll-to-bottom', function() {
-  return {
-    link: function(scope, element, attrs) {
-      scope.$watch(
-        function() {
-          return element.children().length;
-        },
-        function() {
-          element.animate({
-            scrollTop: element.prop('scrollHeight')
-          }, 1000);
-        }
-      );
-    }
+  $scope.donetodo=function(){
+    angular.forEach($scope.todos,function(todo){
+      if(todo.done){$scope.todos.$remove(todo);}
+    });
   };
-}) 
- 
 });
+
+    $(document).ready(function(){
+        $("li").click(function(){
+             
+             
+            if($(this).find(":checkbox").attr("checked")==true)
+            {
+                $(this).find(":checkbox").attr("checked",false);
+            }
+            else
+            {
+                $(this).find(":checkbox").attr("checked",true);
+                 
+                }
+          })
+        })
+         
