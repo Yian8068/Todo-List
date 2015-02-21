@@ -18,22 +18,19 @@ app.controller("ChatCtrl",function($scope,$firebase){
     msg.text=prompt("Edit Message",msg.text);
     $scope.messages.$save(msg);
   };
-             $scope.oneceToShow = 20;
-            $scope.datasource = [];
+  $scope.oneceToShow = 5;
+  $scope.datasource = [];
             $scope.init = function () {//第一次加入0~20
                 $scope.sourcePush(0, $scope.oneceToShow)
             };
             $scope.doLoadMore = function () {//分批載入
-                var start = $scope.datasource.length;
+                var start = $scope.messages.length;
                 var end = start + $scope.oneceToShow;
                 $scope.sourcePush(start, end);
             };
             $scope.sourcePush = function (start, end) {
                 for (var i = start; i < end; i++) {
-                    $scope.datasource.push({
-                        name: 'a',
-                        id: i
-                    })
+                    $scope.messages.push();
                 }
             };
             $scope.init();
