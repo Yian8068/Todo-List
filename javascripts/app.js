@@ -18,7 +18,7 @@ app.controller("ChatCtrl",function($scope,$firebase){
     msg.text=prompt("Edit Message",msg.text);
     $scope.messages.$save(msg);
   };
-  $scope.oneceToShow = 5;
+  $scope.oneceToShow = 10;
   $scope.datasource = [];
             $scope.init = function () {//第一次加入0~20
                 $scope.sourcePush(0, $scope.oneceToShow)
